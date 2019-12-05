@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>XS Task</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+
+<body>
+    <div class="Background"></div>
+
+    <div style="text-align:center; width: 1200px;">
+        <input class="button" type="button" id="home" value="Home" />
+        <input class="button" type="button" id="city" value="City" />
+        <input class="button" type="button" id="arena" value="Arena" />
+        <input class="button" type="button" id="guilds" value="Guilds" />
+        <input class="button" type="button" id="ranking" onclick="firstPage()" value="Ranking" />
+        <input class="button" type="button" id="vip" value="Vip" />
+    </div>
+
+    <div id="myProgress" style="visibility: hidden;">
+        <div id="myBar"> </div>
+        <input type="text" id="countdownTimer" readonly>
+        <img src="./Images/Hourglass.png" alt='Hourglass Image' class="hourglass">
+    </div>
+    <div>
+        <input type="button" id="btnReload" class="btnReload" value="Reload" onclick="reLoad()"/>
+        <input type="text" class="arrow" value=">" readonly>
+    </div>
+
+    <div id="errorPopUp" class="errorPopUp" >
+        <input type="text" id="errorPopUpText" class="errorPopUpText" readonly value="ERROR">
+    </div>
+
+    <div id="result">
+        <table id="table">
+            <caption class="caption" id="caption">Ranking table</caption>
+            <input type="button" id="btn_hide_table" class="btn_hide_table" onclick="hideTable()" value=">" />
+            <thead id="thead">
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th></th>
+                    <th style="text-align: left;">Club</th>
+                    <th>Level</th>
+                    <th>Experience</th>
+                    <th>Messages</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+
+        </table>
+        <div id="pagination" class="pagination">
+            <input type="button" id="previous" class="btn_prev" onclick="previousPage()" value="<" />
+            <div id="pagNumbers" style="display: inline-block;">
+                <!-- <input type="button" id="previous" class="btn_prev" onclick="previousPage()" value="1" /> -->
+            </div>
+            <input type="button" id="next" class="btn_next" onclick="nextPage()" value=">" />
+        </div>
+    </div>
+
+</body>
+
+</html>
